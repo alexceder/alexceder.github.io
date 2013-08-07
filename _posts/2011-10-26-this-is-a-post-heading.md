@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Test Post
+title: This Is A Post Heading
 ---
 
 This is a post, omfg.

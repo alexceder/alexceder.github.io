@@ -2,8 +2,7 @@
 layout: default
 ---
 <section>
-    <h2>{{ page.title }}</h2>
-    <p>{{ page.date }}</p>
-    <a href="{{ page.url }}">{{ page.url }}</a>
+    <h2><a href="{{ page.url }}">{{ page.title }}</a></h2>
+    <p>{{ page.date | date_to_string }}</p>
 {{ content }}
 </section>
