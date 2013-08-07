@@ -103,6 +103,15 @@ header p {
   h1 {
     margin: 0; }
 
+  h2 {
+    font-size: 2em; }
+
+  p {
+    font-size: 1.2em; }
+
+  code {
+    font-size: 1.2em; }
+
   header p {
     margin: 0; }
 
