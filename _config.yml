@@ -2,3 +2,4 @@ source:      .
 destination: ./_site
 layouts:     ./_layouts
 permalink:   pretty
+pygments:    true
