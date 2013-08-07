@@ -74,6 +74,9 @@ code {
   font-size: 1.4em;
   line-height: 1.5em; }
 
+pre {
+  overflow: scroll; }
+
 ::selection {
   background: #ee4300;
   color: white; }
@@ -99,4 +102,7 @@ header p {
     border-bottom: thin solid #dddddd; }
 
   section {
-    margin: 0; } }
+    margin: 0; }
+
+  article {
+    padding: 15px; } }
