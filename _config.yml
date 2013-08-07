@@ -1,3 +1,4 @@
 source:      .
 destination: ./_site
-layout:      ./_layouts
+layouts:     ./_layouts
+permalink:   pretty
