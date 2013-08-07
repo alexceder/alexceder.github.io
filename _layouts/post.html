@@ -2,8 +2,8 @@
 layout: default
 ---
 <section>
-    <h2>{{ post.title }}</h2>
-    {{ post.date }}
-    {{ post.url }}
-    {{ content }}
+    <h2>{{ page.title }}</h2>
+    <p>{{ page.date }}</p>
+    <a href="{{ page.url }}">{{ page.url }}</a>
+{{ content }}
 </section>
