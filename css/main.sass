@@ -1,12 +1,13 @@
-@import url(http://fonts.googleapis.com/css?family=Fauna+One)
+@import url(http://fonts.googleapis.com/css?family=Domine:400,700)
 
 $main-color: #ee4300
 $border-color: #dddddd
 
 html, body
-	font-family: 'Fauna One', sans-serif
+	font-family: 'Domine', sans-serif
 	font-size: 10px
 	margin: 0
+	cursor: default
 
 
 /* structure */
@@ -66,10 +67,30 @@ h2
 	margin: 0 0 20px 0
 	font-size: 2.5em
 
-p
+p, blockquote
 	font-size: 1.4em
 	line-height: 2em
-	display: block
+
+strong
+	font-weight: 700
+
+.backed
+	background: $main-color
+	padding: 5px
+	color: #fff
+	border-radius: 15px
+
+p a, p a:visited
+	text-decoration: none
+	&:link
+		color: $main-color
+		border-bottom: thin dashed
+	&:hover
+		color: lighten($main-color, 10%)
+		border-bottom: none
+	&:active
+		color: darken($main-color, 10%)
+
 pre
 	background-color: lighten($main-color, 50%)
 	padding: 10px
@@ -81,6 +102,9 @@ code
 
 pre
 	overflow: scroll
+
+.dashed
+	border-bottom: thin dashed
 
 ::selection
 	background: $main-color
@@ -107,7 +131,7 @@ header p
 		border-bottom: thin solid $border-color
 
 	h1
-		margin: 0
+		margin: 5px 0
 
 	h2
 		font-size: 2em
