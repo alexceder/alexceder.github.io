@@ -1,5 +1,5 @@
 # alexceder.github.io
 
-Trying to make this my homepage, but since im stupid, it might take a while to figure this Jekyll stuff out.
+The site is not *the blog* for the moment being.
 
 > My posts and pictures are my own, please don't use them. :)
