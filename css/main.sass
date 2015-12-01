@@ -4,61 +4,78 @@
 @import url(http://fonts.googleapis.com/css?family=Domine:400,700)
 
 // Color definitions
-$border-color: #dddddd
+$border-color: #eeeeee
 $main-color: #111111
+$secondary-color: #777777
 
-// Standard
-html, body
+// Base
+
+*,
+*:after,
+*:before
+    box-sizing: border-box
+
+html
+    -webkit-font-smoothing: antialiased
+
+body
     cursor: default
-    font-family: 'Domine', sans-serif
+    font-family: 'Domine', serif
     font-size: 10px
     margin: 0
-    padding: 0 1em
+    padding: 0 1em 0 1em
+    text-align: center
 
 a, a:link, a:visited
-    border-bottom: 1px dotted darken($main-color, 10%)
-    color: lighten($main-color, 30%)
+    border-bottom: 2px solid $secondary-color
+    color: $secondary-color
     font-weight: bold
     text-decoration: none
 
 a:hover
-    border: 0
-    color: lighten($main-color, 40%)
+    border-color: darken(#ffa73f, 20%)
+    color: #ffa73f
 
-// Structure
+
+// Navigation
 nav
-    margin-top: 2em
-    text-align: center
-
-    a, a:link, a:visited
-        background: $main-color
-        border: 0
+    a,
+    a:link,
+    a:visited
+        background: $border-color
         border-radius: 3px
-        color: #ffffff
-        display: inline-block
+        color: $main-color
         font-style: italic
         font-size: 1.4em
-        margin: 0 .1em 1em .1em
+        margin: 0 .5em
         padding: .5em 1em
 
         &:hover
-            background: lighten($main-color, 10%)
+            color: white
+            background: $main-color
+            border-color: black
 
-        &:active
-            background: lighten($main-color, 5%)
+        &.twitter
+            &:hover
+                background: #00aced
+                border-color: darken(#00aced, 20%)
+
+        &.linkedin
+            &:hover
+                background: #007bb6
+                border-color: darken(#007bb6, 20%)
+
 
 // Headings
 h1
     color: $main-color
-    margin: 10% 0 .1em 0
     font-size: 5em
     font-weight: normal
-    text-align: center
+    margin: 2em 0 0 0
 
 h2
-    color: #999999
-    margin: 0 0 2em 0
+    color: $secondary-color
     font-size: 1.6em
-    font-style: italic
     font-weight: normal
-    text-align: center
+    line-height: 1.5em
+    margin: .5em 0 3em 0
