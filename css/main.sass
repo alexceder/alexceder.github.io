@@ -3,80 +3,89 @@
 
 @import url(http://fonts.googleapis.com/css?family=Domine:400,700)
 
-// Color definitions
-$border-color: #eeeeee
 $main-color: #111111
-$secondary-color: #777777
+$secondary-color: #555555
+$light-color: #eeeeee
 
-// Base
+@mixin social-button($name, $color)
+  &.#{$name}
+    &:hover
+      background: $color
+      border-color: darken($color, 20%)
+    &:active
+      background: lighten($color, 5%)
+      border-color: lighten(darken($color, 20%), 5%)
 
 *,
 *:after,
 *:before
-    box-sizing: border-box
+  box-sizing: border-box
 
 html
-    -webkit-font-smoothing: antialiased
+  -webkit-font-smoothing: antialiased
 
 body
-    cursor: default
-    font-family: 'Domine', serif
-    font-size: 10px
-    margin: 0
-    padding: 0 1em 0 1em
-    text-align: center
+  cursor: default
+  font-family: 'Domine', serif
+  font-size: 12px
+  margin: 0
+  padding: 0 1em 0 1em
+  text-align: center
 
-a, a:link, a:visited
-    border-bottom: 2px solid $secondary-color
-    color: $secondary-color
-    font-weight: bold
-    text-decoration: none
+@media screen and (min-width: 896px)
+  body
+    font-size: 16px
 
-a:hover
-    border-color: darken(#ffa73f, 20%)
-    color: #ffa73f
-
-
-// Navigation
-nav
-    a,
-    a:link,
-    a:visited
-        background: $border-color
-        border-radius: 3px
-        display: inline-block
-        color: $main-color
-        font-style: italic
-        font-size: 1.4em
-        margin: 0 .5em .5em
-        padding: .5em 1em
-
-        &:hover
-            color: white
-            background: #333333
-            border-color: black
-
-        &.twitter
-            &:hover
-                background: #00aced
-                border-color: darken(#00aced, 20%)
-
-        &.linkedin
-            &:hover
-                background: #007bb6
-                border-color: darken(#007bb6, 20%)
-
-
-// Headings
 h1
-    color: $main-color
-    font-size: 5em
-    font-weight: normal
-    margin: 2em 0 0 0
-
+  color: $main-color
+  font-size: 5em
+  font-weight: normal
+  margin: 1em 0 0 0
 h2
-    color: $secondary-color
-    font-size: 1.6em
-    font-weight: normal
-    line-height: 1.5em
-    margin: .5em 0 3em 0
+  color: $secondary-color
+  font-size: 1.6em
+  font-weight: normal
+  line-height: 1.5em
+  margin: .5em 0 2em 0
+
+a
+a:link,
+a:visited
+  border-bottom: 3px solid $secondary-color
+  color: $main-color
+  text-decoration: none
+a:hover
+  border-color: darken(#ffa73f, 20%)
+  color: #ffa73f
+a:active
+  border-color: lighten(darken(#ffa73f, 20%), 5%)
+  color: lighten(#ffa73f, 5%)
+
+nav
+  a,
+  a:link,
+  a:visited
+    background: $light-color
+    border-radius: 3px
+    color: $main-color
+    display: inline-block
+    font-size: 1.4em
+    font-style: italic
+    margin: 0 .5em 1em
+    padding: .5em 1em
+    text-transform: lowercase
+    &:after
+      content: '\2192'
+      margin-left: .5em
+    &:hover
+      color: white
+      background: #333333
+      border-color: black
+    &:active
+      background: lighten(#333333, 5%)
+      border-color: lighten(black, 5%)
+      color: white
+    @include social-button('twitter', #00aced)
+    @include social-button('linkedin', #007bb6)
+
+// vim: expandtab:shiftwidth=2:tabstop=2:shiftwidth=2
