@@ -1,0 +1,8 @@
+markdown: redcarpet
+permalink: pretty
+paginate: 2
+paginate_path: '/page-:num/'
+collections:
+    - projects
+gems:
+    - 'jekyll-paginate'

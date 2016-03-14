@@ -1,0 +1,15 @@
+---
+title: Zack &mdash; platform game
+figures:
+    -
+        src: zack.gif
+        alt: "An animation showing a few levels including: ghosts, lasers, character abilities, and finally the ultimate boss."
+caption: Showcasing some of the levels including the final boss fight.
+tags: 
+    - Game
+    - JavaScript
+    - Phaser
+---
+Earned a nomination at the LiU Game Awards 2014.
+
+<p class="text-upperspaced"><a href="/zack">Play the game</a></p>

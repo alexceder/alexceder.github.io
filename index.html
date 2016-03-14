@@ -1,33 +1,29 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Alexander Cederblad personal landing page.">
-  <meta property="og:title" content="alexceder.se">
-  <meta property="og:description" content="Alexander Cederblad personal landing page.">
-  <title>Alexander Cederblad - alexceder.se</title>
-  <link rel="icon" type="image/png" href="/favicon.png" media="screen">
-  <link rel="stylesheet" href="/css/main.css" media="screen">
-  <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-46839687-1', 'auto');
-  ga('send', 'pageview');
-  </script>
-</head>
-<body>
-
-<h1>Alexander Cederblad</h1>
-<h2>Co-founder &amp; CTO at <a href="//www.footmall.se">Footmall</a>, 5th year M. Sc. student.</h2>
-<nav>
-  <a href="//twitter.com/alexceder" class="twitter">Twitter</a>
-  <a href="//github.com/alexceder" class="github">GitHub</a>
-  <a href="//linkedin.com/pub/alexander-cederblad/4b/6a/238" class="linkedin">LinkedIn</a>
-</nav>
-
-</body>
-</html>
+---
+layout: default
+---
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+      <h1>Blog</h1>
+      {% for post in paginator.posts %}
+      <article>
+        <h2>{{ post.title }}</h2>
+        <h3>{{ post.location }}, {{ post.date | date_to_string }}</h3>
+        {{ post.excerpt }}
+        <p class="text-upperspaced"><a href="{{ post.url }}">Read more</a></p>
+      </article>
+      {% endfor %}
+      {% if paginator.total_pages > 1 %}
+        <div class="pagination">
+          {% if paginator.previous_page %}
+            <a href="{{ paginator.previous_page_path }}" class="text-upperspaced">Previous</a>
+          {% endif %}
+          <span>{{ paginator.page }} / {{ paginator.total_pages }}</span>
+          {% if paginator.next_page %}
+            <a href="{{ paginator.next_page_path }}" class="text-upperspaced">Next</a>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>

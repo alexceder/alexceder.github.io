@@ -1,0 +1,19 @@
+---
+layout: default
+---
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+      <article>
+        <h1>{{ page.title }}</h1>
+        <h3>{{ page.location }}, {{ page.date | date_to_string }}</h3>
+        {{ content }}
+        {% if page.updated_at %}
+        <p><small><em>Last update at {{ page.updated_at | date: "%-d %b %Y, %H:%M" }}</em></small></p>
+        {% endif %}
+        <p class="text-upperspaced print-hidden"><a href="/">Go back</a></p>
+      </article>
+    </div>
+  </div>
+</div>
+
