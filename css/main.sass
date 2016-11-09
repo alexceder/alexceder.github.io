@@ -1,8 +1,6 @@
 ---
 ---
 
-@import url(http://fonts.googleapis.com/css?family=Domine:400,700)
-
 $main-color: #111111
 $secondary-color: #555555
 $light-color: #eeeeee
@@ -26,40 +24,33 @@ html
 
 body
   cursor: default
-  font-family: 'Domine', serif
-  font-size: 12px
+  font-family: system, -apple-system, '.SFNSText-Regular', 'San Francisco', 'Roboto', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif
+  font-size: 14px
   margin: 0
   padding: 0 1em 0 1em
   text-align: center
 
 @media screen and (min-width: 896px)
   body
-    font-size: 16px
+    font-size: 20px
 
 h1
   color: $main-color
-  font-size: 5em
+  font-size: 2.2em
   font-weight: normal
-  margin: 1em 0 0 0
-h2
+  margin: 2em 0 0 0
+.subheading
   color: $secondary-color
-  font-size: 1.6em
-  font-weight: normal
   line-height: 1.5em
   margin: .5em 0 2em 0
+  font-style: italic
 
-a
+a,
 a:link,
 a:visited
   border-bottom: 3px solid $secondary-color
   color: $main-color
   text-decoration: none
-a:hover
-  border-color: darken(#ffa73f, 20%)
-  color: #ffa73f
-a:active
-  border-color: lighten(darken(#ffa73f, 20%), 5%)
-  color: lighten(#ffa73f, 5%)
 
 nav
   a,
@@ -69,9 +60,8 @@ nav
     border-radius: 3px
     color: $main-color
     display: inline-block
-    font-size: 1.4em
-    font-style: italic
     margin: 0 .5em 1em
+    font-style: italic
     padding: .5em 1em
     text-transform: lowercase
     &:after
@@ -87,5 +77,3 @@ nav
       color: white
     @include social-button('twitter', #00aced)
     @include social-button('linkedin', #007bb6)
-
-// vim: expandtab:shiftwidth=2:tabstop=2:shiftwidth=2
