@@ -1,6 +1,6 @@
 ---
 title: 'Alexander Cederblad | alexceder.se'
-description: 'Developer. Currently working on M.Sc. thesis.'
+description: 'Developer ordinaire.'
 heading: 'Alexander Cederblad'
 ---
 <!doctype html>
@@ -28,7 +28,9 @@ heading: 'Alexander Cederblad'
 </head>
 <body>
 <h1>{{ page.heading }}</h1>
+{% if page.description %}
 <p class="subheading">{{ page.description }}</p>
+{% endif %}
 <nav>
   <a href="https://twitter.com/alexceder" class="twitter">Twitter</a>
   <a href="https://github.com/alexceder" class="github">GitHub</a>
