@@ -1,0 +1,23 @@
+---
+title: Dota 2 visualization
+figures:
+  -
+    src: dota-vis.jpeg
+    alt: >
+      A visualization dashboard with a map showing player positions over time, a
+      scoreboard, a player proximity graph, etc.
+caption: The visualization dashboard.
+tags:
+  - Data visualization
+  - JavaScript
+  - D3
+  - Evaluation
+---
+The goal of the project was to give users a quick overview of a game of Dota 2.
+A lot of time was spent on figuring out how to mine the data from the demo files
+provided by the game. It was done during my third year of university for an
+information visualization course.
+
+### Credits
+
+Fredrik Johnson

@@ -1,0 +1,24 @@
+---
+title: Tube Wars &mdash; First-person shooter
+figures:
+  -
+    src: tube-wars.gif
+    alt: >
+      An animation showing a panoramic shot of the arena, a handful frames
+      of gameplay and the kick-ass, fiery title screen.
+caption: Showing the arena, some gameplay and finally the kick-ass title screen.
+tags:
+  - Game
+  - Unity
+  - 3D-modelling
+  - Animation
+---
+Tube Wars is a two-on-two, fast paced, arena-style, first-person shooter game
+that me and a few friends made as a project for school. I modeled, textured and
+animated everything except for the characters, designed the UI, and wrote a
+bunch of the game logic. The game was nominated for a Kuberna award, organized
+by the student society.
+
+### Credits
+
+Philip Burridge, Rasmus Haapaoja, Hannes Ingelhag &amp; Fredrik Johnson

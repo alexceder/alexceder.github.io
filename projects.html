@@ -1,0 +1,33 @@
+---
+layout: default
+title: Projects
+---
+<div class="container text-center">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+      <h1>Projects</h1>
+      {% for project in site.projects reversed %}
+      <article>
+        <h2>{{ project.title }}</h2>
+        <figure>
+          {% assign needs_slider = project.figures | size %}
+          {% if needs_slider > 1 %}
+          <div class="slider">
+            {% for figure in project.figures %}
+            <img src="/gfx/{{ figure.src }}" alt="{{ figure.alt }}">
+            {% endfor %}
+          </div>
+          {% else %}
+            <img src="/gfx/{{ project.figures | first | map: 'src' }}" alt="{{ project.figures | first | map: 'alt' }}">
+          {% endif %}
+          <figcaption>{{ project.caption }}</figcaption>
+        </figure>
+        {{ project.content }}
+        {% if project.tags.size > 0 %}
+        <p><small><strong class="dateline">Tags</strong> {{ project.tags | join: ', ' }}</small></p>
+        {% endif %}
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</div>
