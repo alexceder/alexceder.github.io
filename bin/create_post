@@ -1,0 +1,30 @@
+#!/usr/bin/env sh
+
+set -e
+
+if [ $# -ne 1 ];
+then
+  >&2 echo "`basename $0`: Title is required."
+  exit 1
+fi
+
+slug=`echo $1 | tr -cd '[:alpha:] ' | tr '[:upper:]' '[:lower:]' | tr ' ' '-'`
+pathname="_posts/`date "+%Y-%m-%d"`-$slug.markdown"
+date_with_time=`date "+%Y-%m-%d %H:%M"`
+
+if [ -f $pathname ];
+then
+  >&2 echo "$pathname already exists."
+  exit 2
+fi
+
+cat << EOF > $pathname
+---
+layout: post
+location: Stockholm
+title: $1
+date: $date_with_time
+---
+EOF
+
+echo "$pathname was created."

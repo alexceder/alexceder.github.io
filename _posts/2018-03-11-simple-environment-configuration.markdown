@@ -4,19 +4,41 @@ location: Stockholm
 title: Simple Environment Configuration
 date: 2018-03-11 17:06
 ---
-I have, as far as I know, never been able to reach my toes from a standing
-position with my legs kept straight. This is one of those feats that seem so
-simple for some people and impossible for me. When it comes to software however,
-being flexible is something that everyone can do with relative small effort.
-
 Following the twelve-factor methodology's third factor, configuration should
 come from the environment. When developing, it is common to have development,
 testing, staging, and production environments. These may be fewer och more, and
 the environments can have multiple auxiliary configuration producing a matrix of
-different environments.
+different environments. There are countless different solutions to writing
+software that runs in different environments. I will show you a way of
+organizing environment variables and running software with a short shell script.
 
-Developing software that can adapt to different environments can be difficult.
-However there is great benefit to doing so.
+When developing on might find oneself wanting to run software with debug
+information, specific databases, etc. and also run automated tests with a
+different configuration. For example you may run a web application that needs to
+speak to two different databases depending on if it is running tests or running
+a development server.
+
+| foo | bar |
+|-----|-----|
+| baz | qux |
+| two houndred | five "thousand" |
+
+It is common to store this configuration in files checked in to source control.
+Let us name these files `.env.test` for the test environment, and
+`.env.development` for the development environment. E.g.:
+
+```conf
+# .env.test
+APP_ENV=test
+```
+
+```conf
+# .env.development
+APP_ENV=development
+```
+
+Now that we have the configuration files in order, let me show you the shell
+script that was promised[^1].
 
 ```sh
 #!/usr/bin/env sh
@@ -111,8 +133,9 @@ shift
 ```
 
 This command will shift the positional arguments passed to the script. In this
-instance it will essentially pop the envfile argument from the special variable
-`$@` which holds the argument list passed to the script.
+instance it will pop the *env* argument from the special variable `$@` which
+holds the argument list passed to the script. What is left in the argument list
+is the utility to be run along with its own arguments, if any.
 
 ```sh
 # shellcheck disable=SC2046
@@ -150,4 +173,36 @@ grep '^[^#]' "$envfile" | xargs
 Expanding the environment variables and replacing the command with the standard
 output of said command, the utility can be executed with environment.
 
+## Examples
+
+If you are confused about the general explanation of the script; here be
+examples, where things to the right of `$` is command line input:
+
+```
+$ FIRST_NAME="Alexander" sh -c 'echo "Hello, $FIRST_NAME!"'
+Hello, Alexander!
+```
+
+Would be the same as:
+
+```
+$ withenv local sh -c 'echo "Hello $FIRST_NAME!"'
+Hello, Alexander!
+```
+
+As long there is a file `.env.local` with content:
+
+```
+FIRST_NAME="Alexander"
+```
+
+Note that the `echo` command is executed with the `-c` flag of `sh` (or `bash`
+in reality). If that confuses you, I do challenge you, and leave it as an
+exercise to figure out why that is needed to be able to use the environment
+variable. Please tweet at me so that we can start a discussion!
+
 That is it! Did you find this useful? Discuss on Twitter or amongst yourself.
+
+## Footnotes
+
+[^1]: And here is the definition.

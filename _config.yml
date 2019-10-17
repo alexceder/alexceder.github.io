@@ -1,8 +1,10 @@
-markdown: redcarpet
 permalink: /:categories/:year/:month/:day/:title
 paginate: 2
 paginate_path: '/page-:num/'
+author: Alexander Cederblad
+timezone: UTC
 collections:
-    - projects
-gems:
-    - 'jekyll-paginate'
+  - projects
+plugins:
+  - 'jekyll-feed'
+  - 'jekyll-paginate'

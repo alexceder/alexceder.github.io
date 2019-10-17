@@ -8,8 +8,8 @@ layout: default
         <h1>{{ page.title }}</h1>
         <h3>{{ page.location }}, {{ page.date | date_to_long_string }}</h3>
         {{ content }}
-        {% if page.updated_at %}
-        <p><small><em>Last updated {{ page.updated_at | date: "%-d %B %Y, %H:%M" }}</em></small></p>
+        {% if page.last_modified_at %}
+        <p><small><em>Last updated {{ page.last_modified_at | date: "%-d %B %Y, %H:%M" }}</em></small></p>
         {% endif %}
         <p class="text-upperspaced print-hidden"><a href="/">Go back</a></p>
       </article>

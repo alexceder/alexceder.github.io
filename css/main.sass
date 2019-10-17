@@ -9,7 +9,7 @@ $middle-color: #777777
 $light-color: #eeeeee
 $accent-color: #f56438
 
-$line-height: 1.8em
+$line-height: 2em
 
 @mixin social-button($name, $color)
   &.#{$name}
@@ -84,7 +84,7 @@ body
   color: $secondary-color
   cursor: default
   font-family: 'Domine', serif
-  font-size: 14px
+  font-size: 16px
   height: 100%
   margin: 0
 
@@ -161,6 +161,8 @@ a:hover
 a:active
   border-color: lighten(darken($accent-color, 20%), 20%)
   color: lighten($accent-color, 20%)
+a[href^="#fn:"]
+  margin: 0 .2em
 blockquote
   color: $middle-color
   font-style: italic
@@ -188,6 +190,23 @@ pre
     width: 1px
   &:before
     left: 1px
+table
+  border-collapse: collapse
+  margin: 0 auto 1em auto
+thead tr
+  border-bottom: 1px solid $main-color
+tr
+  border-bottom: 1px solid $light-color
+td,
+th
+  padding: .5em
+th
+  color: $main-color
+td
+  border-right: 1px solid $light-color
+  &:last-child
+    border-right: none
+
 
 @media screen and (min-width: $break-width)
   h1
@@ -214,6 +233,7 @@ li
     line-height: $line-height
     &:after
       content: ', '
+      white-space: pre
       font-weight: normal
     &:last-of-type
       &:after
